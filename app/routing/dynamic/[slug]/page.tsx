@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
 async function readJson() {
   "server";
-  const filePath = "app/routing/dynamic/[slug]/articles.json";
+  const filePath = process.cwd() + "/app/routing/dynamic/[slug]/articles.json";
   const data = await fsPromises.readFile(filePath, { encoding: "utf8" });
   const objectData = JSON.parse(data);
 
